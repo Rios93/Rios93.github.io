@@ -11,6 +11,7 @@
     background-position: center;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    transform-origin: center;
   }
 </style>
 <script>
@@ -94,7 +95,7 @@
     'https://i.imgur.com/OEUcgmq.png',
     'https://i.imgur.com/DdPG226.png',
     // Add more card URLs here
-  ];
+    ];
 
   function drawCard() {
     const card = document.getElementById('card');
@@ -102,6 +103,14 @@
     setTimeout(() => {
       const cardIndex = Math.floor(Math.random() * cards.length);
       card.style.backgroundImage = `url(${cards[cardIndex]})`;
+      
+      // 50/50 chance for the card to show up rotated 180 degrees
+      if (Math.random() < 0.5) {
+        card.style.transform = "rotate(180deg)";
+      } else {
+        card.style.transform = "rotate(0deg)";
+      }
+
       card.style.opacity = 1;
     }, 1000);
 
