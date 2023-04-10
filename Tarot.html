@@ -3,18 +3,112 @@
 <head>
 <style>
   body {margin: 0;}
-  #card {width: 100%; height: 100vh; background-size: contain; background-repeat: no-repeat; background-position: center;}
+  #card {
+    width: 100%;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
 </style>
 <script>
   const cards = [
+    'https://i.imgur.com/DNwr8sc.png',
+    'https://i.imgur.com/D1OOH53.png',
+    'https://i.imgur.com/e5Eg4m9.png',
+    'https://i.imgur.com/ZMeKY3m.png',
+    'https://i.imgur.com/jR6UlzE.png',
+    'https://i.imgur.com/uqk3YTt.png',
+    'https://i.imgur.com/MaqZy5Y.png',
+    'https://i.imgur.com/u78OamB.png',
+    'https://i.imgur.com/ugfRhCl.png',
+    'https://i.imgur.com/Cc2uaEG.png',
+    'https://i.imgur.com/hv6xTnr.png',
+    'https://i.imgur.com/SOiTaGh.png',
+    'https://i.imgur.com/8uFRXJm.png',
+    'https://i.imgur.com/ZXZty9n.png',
+    'https://i.imgur.com/Bt2xfBd.png',
+    'https://i.imgur.com/ORkolmB.png',
+    'https://i.imgur.com/v8gIikU.png',
+    'https://i.imgur.com/in8G8MF.png',
+    'https://i.imgur.com/JPG4Oky.png',
+    'https://i.imgur.com/zJFbiP5.png',
+    'https://i.imgur.com/rp3PPB3.png',
+    'https://i.imgur.com/kHfoUb9.png',
+    'https://i.imgur.com/BDfQnLu.png',
+    'https://i.imgur.com/xbmyqh2.png',
+    'https://i.imgur.com/kfAtPVr.png',
+    'https://i.imgur.com/fA98gEu.png',
+    'https://i.imgur.com/trBLmtN.png',
+    'https://i.imgur.com/NPlWkDp.png',
+    'https://i.imgur.com/LsUbKtO.png',
+    'https://i.imgur.com/35I7vqD.png',
+    'https://i.imgur.com/BuWXgxa.png',
+    'https://i.imgur.com/GHq4R1b.png',
+    'https://i.imgur.com/VMZLgP5.png',
+    'https://i.imgur.com/GPCNARo.png',
+    'https://i.imgur.com/sh0g8wH.png',
+    'https://i.imgur.com/EFg7CqL.png',
+    'https://i.imgur.com/FCjkSss.png',
+    'https://i.imgur.com/IxJH3S9.png',
+    'https://i.imgur.com/BShDGaj.png',
+    'https://i.imgur.com/CInYHxJ.png',
+    'https://i.imgur.com/bcxYwFo.png',
+    'https://i.imgur.com/Y5Oznrd.png',
+    'https://i.imgur.com/1FItsGX.png',
+    'https://i.imgur.com/8sDvRUR.png',
+    'https://i.imgur.com/0TOouRe.png',
+    'https://i.imgur.com/w0Stl5i.png',
+    'https://i.imgur.com/DNqtC8o.png',
+    'https://i.imgur.com/pHM7AaF.png',
+    'https://i.imgur.com/ZwPimUT.png',
+    'https://i.imgur.com/VgRNOSt.png',
+    'https://i.imgur.com/3uxMbAy.png',
+    'https://i.imgur.com/5qTvqkZ.png',
+    'https://i.imgur.com/gCjrbUw.png',
+    'https://i.imgur.com/iqIOyAh.png',
+    'https://i.imgur.com/hnFZOFh.png',
+    'https://i.imgur.com/dJYxJbn.png',
+    'https://i.imgur.com/CuMDLWP.png',
+    'https://i.imgur.com/10iH7hH.png',
+    'https://i.imgur.com/1v74BOz.png',
+    'https://i.imgur.com/QaeOaaG.png',
+    'https://i.imgur.com/IGfOV20.png',
+    'https://i.imgur.com/7DbIiom.png',
+    'https://i.imgur.com/eTkyiO3.png',
+    'https://i.imgur.com/wvp1VGU.png',
+    'https://i.imgur.com/f1XCOUP.png',
     'https://i.imgur.com/WWsfv8k.png',
+    'https://i.imgur.com/YVUhuSZ.png',
+    'https://i.imgur.com/PsTKmoU.png',
+    'https://i.imgur.com/QX1Cw5y.png',
+    'https://i.imgur.com/jwww5px.png',
     'https://i.imgur.com/ldOf9X6.png',
+    'https://i.imgur.com/B0c5HFA.png',
+    'https://i.imgur.com/jpm2H1Y.png',
+    'https://i.imgur.com/O27eUgu.png',
+    'https://i.imgur.com/DJ1tkBK.png',
+    'https://i.imgur.com/jDhcAZo.png',
+    'https://i.imgur.com/OEUcgmq.png',
+    'https://i.imgur.com/DdPG226.png',
     // Add more card URLs here
   ];
 
   function drawCard() {
-    const cardIndex = Math.floor(Math.random() * cards.length);
-    document.getElementById('card').style.backgroundImage = `url(${cards[cardIndex]})`;
+    const card = document.getElementById('card');
+    card.style.opacity = 0;
+    setTimeout(() => {
+      const cardIndex = Math.floor(Math.random() * cards.length);
+      card.style.backgroundImage = `url(${cards[cardIndex]})`;
+      card.style.opacity = 1;
+    }, 1000);
+
+    // Hold the card for 10 seconds before fading out
+    setTimeout(() => {
+      card.style.opacity = 0;
+    }, 11000);
   }
 </script>
 </head>
